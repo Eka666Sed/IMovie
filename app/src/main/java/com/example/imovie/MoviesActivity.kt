@@ -10,8 +10,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android.volley.Response
-import com.google.android.gms.common.api.Response
 import javax.security.auth.callback.Callback
 
 class MoviesActivity : Activity() {
