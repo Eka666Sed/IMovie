@@ -10,7 +10,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import javax.security.auth.callback.Callback
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+
+
 
 class MoviesActivity : Activity() {
 
@@ -51,7 +56,8 @@ class MoviesActivity : Activity() {
                 imdbService.findMovie(queryInput.text.toString()).enqueue(object :
                     Callback<MoviesResponse> {
                     override fun onResponse(call: Call<MoviesResponse>,
-                                            response: Response<MoviesResponse>) {
+                                            response: Response<MoviesResponse>
+                    ) {
                         if (response.code() == 200) {
                             movies.clear()
                             if (response.body()?.results?.isNotEmpty() == true) {
